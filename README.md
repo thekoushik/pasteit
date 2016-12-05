@@ -1,6 +1,6 @@
 # PasteIt
 
-Creates/rewrites File and paste text from the clipboard
+Creates/Appends File with clipboard text
 
 ### Install
 

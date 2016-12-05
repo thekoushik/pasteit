@@ -1,7 +1,7 @@
 {
   "name": "pasteit",
-  "version": "0.0.2",
-  "description": "Create file and paste clipboard text",
+  "version": "0.0.3",
+  "description": "Create/Append clipboard text to file",
   "main": "index.js",
   "bin": {
     "pasteit": "./index.js"
@@ -15,7 +15,8 @@
     "paste",
     "file",
     "quick",
-    "easy"
+    "easy",
+    "cli"
   ],
   "author": "Koushik Seal",
   "license": "MIT",
