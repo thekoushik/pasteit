@@ -1,6 +1,6 @@
 {
   "name": "pasteit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Create/Append clipboard text to file",
   "main": "index.js",
   "bin": {

@@ -2,6 +2,7 @@
 
 var clipboard = require('copy-paste');
 var fs=require('fs');
+var path=require('path');
 
 var filename=process.argv[2];
 var option = [];
@@ -21,15 +22,20 @@ if(filename==undefined){
     ].join("\n"));
 }else{
     var fromClipboard = clipboard.paste();
+
+    var abspath=path.resolve(filename);
+    var dirname=path.dirname(abspath);
+    if(!fs.existsSync(dirname)) fs.mkdirSync(dirname);
+
     if(option.indexOf('a')>=0){
-        fs.appendFile(filename, (option.indexOf('n')>=0)? "\n"+fromClipboard : fromClipboard,(err)=>{
+        fs.appendFile(abspath, (option.indexOf('n')>=0)? "\n"+fromClipboard : fromClipboard,(err)=>{
             if (err) {
                 return console.error(err);
             }
             console.log(fromClipboard.length+" byte(s) appended");
         });
     }else{
-        fs.writeFile(filename,fromClipboard,(err)=>{
+        fs.writeFile(abspath,fromClipboard,(err)=>{
             if (err) {
                 return console.error(err);
             }
